@@ -14,11 +14,8 @@ def shorten(word):
 
 
 def main():
-    print(shorten())
-
-
-
-
+    user_word = input("Introduzca palabra: ")
+    print(shorten(user_word))
 
 if __name__ == "__main__":
     main()
