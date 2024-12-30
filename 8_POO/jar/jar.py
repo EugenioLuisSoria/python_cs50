@@ -1,4 +1,4 @@
-import pytest, sys
+import inspect
 
 
 class Jar:
@@ -33,4 +33,26 @@ class Jar:
     def size(self):
         return self.cookies_in_jar
 
+class JarritoAdentro(Jar):
+    def __init__(self,pedito):
+        super().__init__()
+        self.pedito = pedito
 
+
+    def __str__(self):
+        return f"{self.capacity_init} {self.pedito}"
+    
+
+#INHERITANCE OF CLASSES:
+ped = JarritoAdentro(pedito="pfff")
+print(ped)
+
+
+#LISTAR METODOS DE UNA CLASE/OBJETO
+for i in range(len(dir(Jar))):
+    print(dir(Jar)[i])
+print("------------------------------------------------------")
+j = Jar()
+metodos = inspect.getmembers(j, inspect.ismethod)
+for metodo in metodos:
+    print(metodo)
